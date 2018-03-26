@@ -58,9 +58,9 @@ module.exports = {
             title: req.body.title || todo.title,
           })
           .then(() => res.status(200).send(todo))  // Send back the updated todo.
-          .catch((error) => res.status(400).send(error));
+          .catch((error) => res.status(400).send(error))
       })
-      .catch((error) => res.status(400).send(error));
+      .catch((error) => res.status(400).send(error))
   },
   destroy(req, res) {
     return Todo
@@ -76,6 +76,6 @@ module.exports = {
           .then(() => res.status(200).send({ message: 'Todo deleted successfully.' }))
           .catch(error => res.status(400).send(error))
       })
-      .catch(error => res.status(400).send(error));
+      .catch(error => res.status(400).send(error))
   },
 }
