@@ -1,13 +1,13 @@
-const Todo = require('../models').Todo
-const TodoItem = require('../models').TodoItem
+const TodoItem = require('../models').TodoItem;
 
 module.exports = {
   create(req, res) {
-    return Todo
+    return TodoItem
       .create({
-        title: req.body.title,
+        content: req.body.content,
+        todoId: req.params.todoId,
       })
-      .then(todo => res.status(201).send(todo))
+      .then(todoItem => res.status(201).send(todoItem))
       .catch(error => res.status(400).send(error))
   },
   list(req, res) {
